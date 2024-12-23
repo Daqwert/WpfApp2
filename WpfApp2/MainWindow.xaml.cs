@@ -107,18 +107,25 @@ namespace ryba
                 }
 
                 string res = $"Дата отгрузки: {shipmentDt.ToString("dd.MM.yyyy HH:mm")}\n";
+
                 foreach (int t in temperatures)
                 {
                     curTime = curTime.AddMinutes(10);
                     if (t > maxTemp)
                     {
                         OverheatTime += 10;
-                        res += $"Текущее время: {curTime.ToString("dd.MM.yyyy HH:mm")}; Превышение максимальной температуры: {t - maxTemp}\n";
+                        res += $"Время: {curTime.ToString("dd.MM.yyyy HH:mm")}; " +
+                               $"Требуемая температура: {maxTemp}°C; " +
+                               $"Фактическая температура: {t}°C; " +
+                               $"Отклонение: {t - maxTemp}°C (Превышение)\n";
                     }
                     else if (t < minTemp)
                     {
                         OvercoldTime += 10;
-                        res += $"Текущее время: {curTime.ToString("dd.MM.yyyy HH:mm")}; Понижение минимальной температуры: {minTemp - t}\n";
+                        res += $"Время: {curTime.ToString("dd.MM.yyyy HH:mm")}; " +
+                               $"Требуемая температура: {minTemp}°C; " +
+                               $"Фактическая температура: {t}°C; " +
+                               $"Отклонение: {minTemp - t}°C (Понижение)\n";
                     }
                 }
 
