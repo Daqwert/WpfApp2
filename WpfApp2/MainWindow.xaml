@@ -103,7 +103,7 @@
            FontSize="16" 
            />
 
-            <ScrollViewer Height="199" Margin="0,5,0,0">
+            <ScrollViewer Height="217" Margin="0,5,0,0">
                 <TextBlock Name="ReportTextBlock"
                TextWrapping="Wrap"
                MouseDown="ReportTextBlock_MouseDown" 
@@ -112,7 +112,7 @@
                Cursor="Hand"
                FontSize="14" 
                Background="#E8F1F2" 
-               Padding="10" Height="288" />
+               Padding="10" Height="300" />
             </ScrollViewer>
         </StackPanel>
     </Grid>
